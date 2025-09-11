@@ -19,6 +19,14 @@ const routes = [
         handler: (req, h) => {
             return 'About Page';
         }
+    },
+    {
+        method: 'GET',
+        path: '/hello/{username?}',
+        handler: (req, h) => {
+            const {username = "visitor"} = req.params;
+            return `Welcome ${username}`
+        }
     },    
     {
         method: '*',
