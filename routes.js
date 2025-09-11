@@ -25,6 +25,11 @@ const routes = [
         path: '/hello/{username?}',
         handler: (req, h) => {
             const {username = "visitor"} = req.params;
+            const {lang} = req.query;
+
+            if(lang === 'ID'){
+                return `Selamat Datang ${username}`
+            }
             return `Welcome ${username}`
         }
     },    
